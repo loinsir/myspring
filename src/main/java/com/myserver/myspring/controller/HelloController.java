@@ -23,7 +23,33 @@ public class HelloController {
 
     @GetMapping("hello-string")
     @ResponseBody
-    public String helloString(@RequestParam("name") String name) {
-        return "hello " + name;
+    public String helloString(@RequestParam(value = "name", required = false) String name) {
+        return "<h1>hello " + name + "</h1>";
+    }
+
+    @GetMapping("hello-api")
+    @ResponseBody
+    public Hello helloApi(@RequestParam("name") String name) {
+        Hello hello = new Hello();
+        hello.setName(name);
+        return hello;
+    }
+
+    static class Hello {
+        private String name;
+
+        /**
+         * @return the name
+         */
+        public String getName() {
+            return name;
+        }
+
+        /**
+         * @param name the name to set
+         */
+        public void setName(String name) {
+            this.name = name;
+        }
     }
 }
