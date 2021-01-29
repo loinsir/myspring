@@ -6,9 +6,6 @@ import java.util.Optional;
 import com.myserver.myspring.domain.Member;
 import com.myserver.myspring.repository.MemberRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 public class MemberService {
     
     private final MemberRepository memberRepository;
