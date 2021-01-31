@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringConfig {
 
-    private DataSource dataSource;  //spring이 관리하는 dataSource
+    private final DataSource dataSource;  //spring이 관리하는 dataSource
 
     @Autowired //di
     public SpringConfig(DataSource dataSource) {
