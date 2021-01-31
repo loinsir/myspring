@@ -3,6 +3,7 @@ package com.myserver.myspring;
 import javax.sql.DataSource;
 
 import com.myserver.myspring.repository.JdbcMemberRepository;
+import com.myserver.myspring.repository.JdbcTemplateMemberRepository;
 import com.myserver.myspring.repository.MemberRepository;
 // import com.myserver.myspring.repository.MemoryMemberRepository;
 import com.myserver.myspring.service.MemberService;
@@ -29,6 +30,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
         // return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+        // return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
