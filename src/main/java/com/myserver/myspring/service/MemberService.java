@@ -3,9 +3,12 @@ package com.myserver.myspring.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import com.myserver.myspring.domain.Member;
 import com.myserver.myspring.repository.MemberRepository;
 
+@Transactional
 public class MemberService {
     
     private final MemberRepository memberRepository;
